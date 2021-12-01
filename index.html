@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+ <head> 
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&amp;display=swap" rel="stylesheet"> 
+  <style>
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Crimson Text', serif;
+      }
+      
+      
+      
+      #card
+      {  
+        width:600px;
+        height:380px;
+      //  border:1px solid none;
+        position:relative;
+        top:100px;
+        left:190px;
+        border-radius:10px 10px 0px 0px;
+        background-color:white;
+      }  
+      
+      body::before
+        {
+          content:"";
+          position: absolute;
+          z-index:-1;
+          width:100%;
+          height:100%;
+          opacity:0.7;
+          background-color:#D22D57; 
+          
+        }
+        
+      header
+      { 
+        border-radius:10px 10px 0px 0px;
+        height:50px;
+        border-bottom:1px solid none;
+        text-align:center;
+        background-color:#F83990;
+        color:white;
+      }
+      
+      #text
+      {
+        padding:10px 0px;
+        font-size:26px;
+        
+      }
+      
+      #foot
+      {
+        padding:10px 0px;
+      }
+      
+      
+      #content
+      {
+         height:260px;
+        
+      }
+      #form
+      {
+         display:flex;
+         flex-direction:row;
+     //   border-bottom:1px solid black; 
+        justify-content:center; 
+       margin-top:33px;
+       margin-left:10px;
+       margin-right:10px;
+      }
+      #Footer
+      {
+       //   border-bottom:1px solid none; 
+          text-align:center;
+        background-color:#F5F2F2;
+          border-radius:0px 0px 10px 10px;      
+        height:50px;
+        //color:white;
+        font-size:22px;
+        
+      }
+      .form-control{
+      //  margin:30px 10px;
+      width:200px;
+      height:40px;
+      text-align:center;
+      border-radius:10px;
+      border:0.10px solid black;
+      font-size:15px;
+      }
+      
+      .form-control:hover
+        {
+          box-shadow:1px 1px 8px #F83990;
+          outline:none;
+        }
+        
+      #plus{
+       padding:0px 20px;
+      }
+      
+      .form-group
+      {
+        margin:10px 5px;
+      }
+      
+      #p{
+      margin:18px 0px;
+      }
+      
+      #btnclass{
+        display:flex;
+        justify-content:center;
+      }
+      
+      #btn
+      {
+        width:200px;
+        margin-top:40px;
+        height:40px;
+        background-color:#F83990;   
+        border:none;
+        border-radius:10px;
+        outline:none;
+        color:white;
+        font-size:18px;
+        
+      }
+      
+      #btn:hover{
+        transition:background-color;
+       background-color:#F5F2F2;
+        color:black;
+        transition-duration:1s;
+      }
+      
+      #ans
+      {
+        display:flex;
+        justify-content:center;
+        margin-top:40px;
+      }
+      
+      #Love
+        {
+         width:200px;
+      height:40px;
+      text-align:center;
+      border-radius:10px;
+      border:0.10px solid black;
+      font-size:15px;
+       
+        }
+        
+    </style> 
+ </head> 
+ <body> 
+  <div id="card"> 
+   <header> 
+    <p id="text"> Love Calculater </p> 
+   </header> 
+   <div id="content"> 
+    <form id="form"> 
+     <div class="form-group"> 
+      <input type="text" name="" class="form-control" placeholder="Your Name" id="name"> 
+     </div> 
+     <div id="p"> 
+      <span id="plus"> + </span> 
+     </div> 
+     <div class="form-group"> 
+      <input type="text" name="" class="form-control" placeholder="Lover Name" id="lovername"> 
+     </div> 
+    </form> 
+    <div id="btnclass"> 
+     <button id="btn" onclick="answer()">Click</button> 
+    </div> 
+    <div id="ans"> 
+     <input type="text" id="Love" name="" placeholder="LOVE PERCENTAGE"> 
+    </div> 
+   </div> 
+   <div id="Footer"> 
+    <p id="foot"> God Bless Your Relationship </p> 
+   </div> 
+  </div> 
+  
+    <script>
+      
+      
+        function answer()
+        {
+            let name=document.getElementById('name').value; 
+            let lovename=document.getElementById('lovername').value;
+          
+          if(name=="")
+           {
+             alert("Please Enter Name Field");
+           }  
+           else if(name.length<2)
+           {
+            alert("Name Field length should be 2 or more"); 
+           }       
+           else if(!isNaN(name))
+           {
+             alert("Do not enter number");
+           } 
+           else if(lovename == "")
+           {
+             alert("Please Enter LoverName Field"); 
+           }        
+           else if(lovename.length<2)
+           {
+            alert("LoverName Field length should be 2 or more"); 
+           }      
+           else if(!isNaN(lovename))
+           {
+             alert("Do not enter number");
+           }
+          else{
+          var lovedata=Math.random()*100;
+          lovedata=Math.floor(lovedata);
+          document.getElementById('Love').value=lovedata+"%";   
+          }
+          
+        }      
+    </script>
+ </body>
+</html>
